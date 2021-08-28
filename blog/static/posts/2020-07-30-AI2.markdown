@@ -1,0 +1,15 @@
+---
+working: false
+deadline: false
+layout: default
+modal-id: 2
+date: 2020-02-08T20:39:51
+img: AI 2.jpg
+img2: 
+img3:
+alt: image-alt
+project-date: 2020
+client: trico13
+category: Fan art
+description: 竜になるために竜王の弟子を倒すべき
+---

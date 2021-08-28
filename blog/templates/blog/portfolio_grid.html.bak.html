@@ -1,0 +1,159 @@
+{% load static %}
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" style="padding-top:0px">
+        <div class="container portfolio-flex-grid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="works">CURRENT WORKS</h2>
+                    <h2 class="works">作業中</h2>
+                    <hr class="star-primary-1">
+                <div class="RKGK-wrapper">
+                    <div class="bigwindow">
+                        <div class="blackwindow" data-toggle="modal" data-target="#contact0" onclick="play()">
+                            <div class="blackwindow-contents">
+                                <div id="d-day">00:00</div>
+                            </div>
+                        </div>
+                        <img src="http://drive.google.com/uc?export=view&id=1OExtjqmrl2BgJEe0lYvyCHuWBstfJAEt" class="main-img" alt="" onerror="this.src = 'img/closed.png'">
+                    </div>
+                    <div class="RKGK-flex">
+                          <h3 class="RKGK">RKGK</h3>
+                          <div class="portfolio-flex-row1" style="font-size: 1rem;">
+                              <div class='flex-img'>
+                                  <div class='flex-img-center'>
+                                      <img class='in-img' src="http://drive.google.com/uc?export=view&id=17EtxpWJR-wzR2FVeBMe9OkvUIEptSyM-">
+                                  </div>
+                              </div>
+                              <div class='flex-img'>
+                                  <div class='flex-img-center'>
+                                      <img class='in-img' src="http://drive.google.com/uc?export=view&id=1LQK3mFmgtp9m68X33IPs7n_V43WB2-zM">
+                                  </div>
+                              </div>
+                              <div class='flex-img'>
+                                  <div class='flex-img-center'>
+                                      <img class='in-img' src="http://drive.google.com/uc?export=view&id=1-0GgDNSjRmyafFylmTyTYiEQeb0ZJeaW">
+                                  </div>
+                              </div>
+                              <div class='flex-img'>
+                                  <div class='flex-img-center'>
+                                      <img class='in-img' src="http://drive.google.com/uc?export=view&id=1tL3Pw2lNIIXVh1FcoqOm_kOaS8-63QnY">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="star-primary" style='margin-top:20vmin;'>
+            </hr>
+            <div class="portfolio-flex-row">
+                {% for post in showposts %}
+                <h1>{{ post.title }}</h1>
+                {% endfor %}
+             
+                <div>A</div>
+                    <div class="portfolio-flex-item portfolio-item">
+                        <a href="#portfolioModal-{{ post.pk }}" class="portfolio-link" data-toggle="modal"  onclick="play()">
+                            <div id="caption{{ post.pk }}" class="caption">
+                                <div id="DDL{{ post.pk }}" style="font-family:'NanumSquare'，'Noto Sans SC';display:flex;text-align: center;align-items: center;justify-content:center;font-size: 2em;color: brown;display:block;margin-top: 20px;"></div>
+                                <div class="caption-content" style="font-family:'NanumSquare'，'Noto Sans SC';display:flex;text-align: center;align-items: center;justify-content:center">
+                                   <!-- <div id="d-day{{ post.pk }}" style="color:white;">00:00</div>-->                                   
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="dt{{ post.pk }}" class="clock-color">00</div>
+                                        <small>days</small>
+                                    </div>
+                                    <div  class="clocktext clocktext{{ post.pk }}">:</div>
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="ht{{ post.pk }}" class="clock-color">00</div>
+                                        <small>hrs</small>
+                                    </div>
+                                    <div class="clocktext clocktext{{ post.pk }}">:</div>
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="mt{{ post.pk }}" class="clock-color">00</div>
+                                        <small>min</small>
+                                    </div class="clocktext clocktext{{ post.pk }}">
+                                    <div class="clocktext clocktext{{ post.pk }}">:</div>
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="st{{ post.pk }}" class="clock-color">00</div>
+                                        <small>sec</small>
+                                    </div>
+                                    <div id = "done{{ post.pk }}" style = "display:none;font-family: 'Kosugi Maru';font-size: 1.5em;">終</div>
+                                </div>
+                            </div>
+                                <img src="{% static "{{ post.photo.url }}" %}" class="img-responsive" alt="준비중">                            
+                            <div style="display:flex;flex-flow:row wrap;justify-content: space-between;margin:5px;">
+                                <img src="{% static "img/portfolio/{{ post.img2" %}" style="background-color:aliceblue; flex:1 0 49%;max-width: 49%;max-height: 6.5em;object-fit: cover;" onerror="this.src = '{% static "img/portfolio/ghost_icon.png'">
+                                <img src="{% static "img/portfolio/{{ post.img3" %}" style="background-color:aliceblue; flex:1 0 49%;max-width: 49%; max-height: 6.5em;object-fit: cover;"onerror="this.src = '{% static "img/portfolio/ghost_icon.png'">
+                            </div>
+
+                        </a>
+                    </div>
+                        <script>
+                            var firstDay{{ post.pk }} = new Date('{{ post.date }}'.replace(/-/g, "/")).getTime();
+                            var DLDay{{ post.pk }} = new Date('{{ post.deadlinet }}'.replace(/-/g, "/")).getTime();
+                            var x{{ post.pk }} = setInterval(function() {
+                                var now{{ post.pk }} = new Date().getTime();
+                                var distance{{ post.pk }} = now{{ post.pk }} - firstDay{{ post.pk }};                                
+                                var d{{ post.pk }} = Math.floor(distance{{ post.pk }} / (1000 * 60 * 60 * 24)) + 1;
+                                var h{{ post.pk }} = Math.floor((distance{{ post.pk }} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var m{{ post.pk }} = Math.floor((distance{{ post.pk }} % (1000 * 60 * 60)) / (1000 * 60));
+                                var s{{ post.pk }} = Math.floor((distance{{ post.pk }} % (1000 * 60)) / 1000);
+
+                                var Ddistance{{ post.pk }} = DLDay{{ post.pk }} - now{{ post.pk }};
+                                var Dd{{ post.pk }} = Math.floor(Ddistance{{ post.pk }} / (1000 * 60 * 60 * 24));
+                                var Dh{{ post.pk }} = Math.floor((Ddistance{{ post.pk }} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var Dm{{ post.pk }} = Math.floor((Ddistance{{ post.pk }} % (1000 * 60 * 60)) / (1000 * 60));
+                                var Ds{{ post.pk }} = Math.floor((Ddistance{{ post.pk }} % (1000 * 60)) / 1000);
+
+                                if({{ post.working }}){
+                                    if({{ post.deadline }}){
+                                        document.getElementById("dt{{ post.pk }}").innerHTML = [Dd{{ post.pk }} < 10 ? '0'+Dd{{ post.pk }} : Dd{{ post.pk }}];
+                                        document.getElementById("ht{{ post.pk }}").innerHTML = [Dh{{ post.pk }} < 10 ? '0'+Dh{{ post.pk }} : Dh{{ post.pk }}];
+                                        document.getElementById("mt{{ post.pk }}").innerHTML = [Dm{{ post.pk }} < 10 ? '0'+Dm{{ post.pk }} : Dm{{ post.pk }}];
+                                        document.getElementById("st{{ post.pk }}").innerHTML = [Ds{{ post.pk }} < 10 ? '0'+Ds{{ post.pk }} : Ds{{ post.pk }}];
+                                        document.getElementById("DDL{{ post.pk }}").innerText = 'DEADLINE';
+                                    }
+                                    else if({{ post.deadline }}==false){
+                                        // document.getElementById("d-day{{ post.pk }}").innerHTML = [d{{ post.pk }} < 10 ? '0'+d{{ post.pk }} : d{{ post.pk }}] + " : " + [h{{ post.pk }} < 10 ? '0'+h{{ post.pk }} : h{{ post.pk }}] + " : " + [m{{ post.pk }} < 10 ? '0'+m{{ post.pk }} : m{{ post.pk }}] + " : " + [s{{ post.pk }} < 10 ? '0'+s{{ post.pk }} : s{{ post.pk }}];
+                                        document.getElementById("dt{{ post.pk }}").innerHTML = [d{{ post.pk }} < 10 ? '0'+d{{ post.pk }} : d{{ post.pk }}];
+                                        document.getElementById("ht{{ post.pk }}").innerHTML = [h{{ post.pk }} < 10 ? '0'+h{{ post.pk }} : h{{ post.pk }}];
+                                        document.getElementById("mt{{ post.pk }}").innerHTML = [m{{ post.pk }} < 10 ? '0'+m{{ post.pk }} : m{{ post.pk }}];
+                                        document.getElementById("st{{ post.pk }}").innerHTML = [s{{ post.pk }} < 10 ? '0'+s{{ post.pk }} : s{{ post.pk }}];
+                                        document.getElementById("DDL{{ post.pk }}").innerText = 'NO LIMIT';
+                                        document.getElementById("DDL{{ post.pk }}").style.color= '#DFF0E2';
+                                        // document.getElementById("DDL{{ post.pk }}").style.display= 'none';
+                                    }
+                                }else{
+                                //document.getElementById("d-day{{ post.pk }}").innerText = '終了';
+                                var y = document.getElementsByClassName('clocktext{{ post.pk }}');
+                                var i;
+                                for (i = 0; i < y.length; i++){
+                                    y[i].style.display = 'none';
+                                }
+                                document.getElementById("done{{ post.pk }}").style.display= '';
+                                document.getElementById("DDL{{ post.pk }}").style.display= 'none';
+                                }
+                            }, 1000);
+
+                        </script>
+                // {% endfor %}
+                <script>
+                                var firstDay = new Date('{{ site.todaystart }}').getTime();
+                                // [d < 10 ? '0' + d : d] +" : " + 
+                                var x = setInterval(function() {
+                                            var now = new Date().getTime();
+                                            var distance = now - firstDay;
+                                            var d = Math.floor(distance / (1000 * 60 * 60 * 24)) + 1;
+                                            var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                            var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                            var s = Math.floor((distance % (1000 * 60)) / 1000);
+                                            if({{ site.switch }}){
+                                            document.getElementById("d-day").innerHTML = [h < 10 ? '0' + h : h] + " : " + [m < 10 ? '0' + m : m] + " : " + [s < 10 ? '0' + s : s];
+                                            }else{
+                                            document.getElementById("d-day").innerHTML = "休み中";
+                                            }
+                                        }, 1000);
+                        </script>
+            </div>
+        </div>
+    </section>

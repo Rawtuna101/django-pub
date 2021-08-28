@@ -1,71 +1,176 @@
 {% load static %}
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" style="padding-top:0px">
+        <div class="d-flex border">
+            <div class='border'>영역역</div>
+            <div class='border'>ㅇ</div>
+            <div class='border'>ㅁㄴㄴㅇㅇㄹㄹㅁ</div>
+        </div>
+        <div class="container portfolio-flex-grid">
+            <div class="row">
+                <div class="col-lg-9 text-center">
+                    <!-- <div class="col-lg-12" style="border-radius: 0.5em; background-color: rgb(140, 204, 247);">
+                        <h2 class="works" style="color: azure;">CURRENT WORKS</h2>
+                        <h2 class="works" style="color: azure;">作業中</h2>
+                    </div> -->
+                    <hr class="star-primary-1">
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <!-- <div class="bigwindow embed-responsive-item">
+                                <div class="blackwindow" data-toggle="modal" data-target="#contact0" onclick="play()">
+                                    <div class="blackwindow-contents">
+                                        <div id="d-day">00:00</div>
+                                    </div>
+                                </div>                            
+                                <img src="http://drive.google.com/uc?export=view&id=1OExtjqmrl2BgJEe0lYvyCHuWBstfJAEt" class="main-img" alt="" onerror="this.src = 'img/closed.png'">
+                            </div> -->
+                            <iframe
+                                    src="https://bangumi.rawtuna101.art/embed/video"
+                                    title="Owncast"
+                                    height="350px" width="550px"
+                                    referrerpolicy="origin"
+                                    scrolling="no"
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                            <h3 class="RKGK">RKGK</h3>
+                            <div class="col-lg-12" style="font-size: 1rem;">
+                                <div class='flex-img col-lg-3 col-md-3 col-sm-3 col-xs-6'>
+                                    <div class='flex-img-center'>
+                                        <img class='in-img' src="http://drive.google.com/uc?export=view&id=17EtxpWJR-wzR2FVeBMe9OkvUIEptSyM-">
+                                    </div>
+                                </div>
+                                <div class='flex-img col-lg-3 col-md-3 col-sm-3 col-xs-6'>
+                                    <div class='flex-img-center'>
+                                        <img class='in-img' src="http://drive.google.com/uc?export=view&id=1LQK3mFmgtp9m68X33IPs7n_V43WB2-zM">
+                                    </div>
+                                </div>
+                                <div class='flex-img col-lg-3 col-md-3 col-sm-3 col-xs-6'>
+                                    <div class='flex-img-center'>
+                                        <img class='in-img' src="http://drive.google.com/uc?export=view&id=1-0GgDNSjRmyafFylmTyTYiEQeb0ZJeaW">
+                                    </div>
+                                </div>
+                                <div class='flex-img col-lg-3 col-md-3 col-sm-3 col-xs-6'>
+                                    <div class='flex-img-center'>
+                                        <img class='in-img' src="http://drive.google.com/uc?export=view&id=1tL3Pw2lNIIXVh1FcoqOm_kOaS8-63QnY">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/cabin.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/cake.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/circus.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/game.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/safe.png' %}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/submarine.png' %}" alt="..." />
-                        </div>
-                    </div>
+                <div id="fav" class="col-lg-3 col-md-12" >
+                    AABBAB
                 </div>
             </div>
-        </section>
+            <hr class="star-primary" style='margin-top:20vmin;'>
+            </hr>
+            <div class="portfolio-flex-row">
+                {% for post in showposts reversed %}
+                 
+                    <div class="portfolio-flex-item portfolio-item">
+                        <a href="#portfolioModal-{{ post.pk }}" class="portfolio-link" data-toggle="modal"  onclick="play()">
+                            <div id="caption{{ post.pk }}" class="caption">
+                                <div id="DDL{{ post.pk }}" style="font-family:'NanumSquare'，'Noto Sans SC';display:flex;text-align: center;align-items: center;justify-content:center;font-size: 2em;color: brown;display:block;margin-top: 20px;"></div>
+                                <div class="caption-content" style="font-family:'NanumSquare'，'Noto Sans SC';display:flex;text-align: center;align-items: center;justify-content:center">                            
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="dt{{ post.pk }}" class="clock-color">00</div>
+                                        <small>days</small>
+                                    </div>
+                                    <div  class="clocktext clocktext{{ post.pk }}">:</div>
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="ht{{ post.pk }}" class="clock-color">00</div>
+                                        <small>hrs</small>
+                                    </div>
+                                    <div class="clocktext clocktext{{ post.pk }}">:</div>
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="mt{{ post.pk }}" class="clock-color">00</div>
+                                        <small>min</small>
+                                    </div class="clocktext clocktext{{ post.pk }}">
+                                    <div class="clocktext clocktext{{ post.pk }}">:</div>
+                                    <div class="clocktext clocktext{{ post.pk }}">
+                                        <div id="st{{ post.pk }}" class="clock-color">00</div>
+                                        <small>sec</small>
+                                    </div>
+                                    <div id = "done{{ post.pk }}" style = "display:none;font-family: 'Kosugi Maru';font-size: 1.5em;">終</div>
+                                </div>
+                            </div>
+                                <img src="{{ post.get_photo_url }}" class="img-fluid" alt="준비중">                            
+                            <div style="display:flex;flex-flow:row wrap;justify-content: space-between;margin:5px;">
+                                <img src="{{ post.get_profile_pic_url }}" style="background-color:aliceblue; flex:1 0 49%;max-width: 49%;max-height: 6.5em;object-fit: cover;" onerror="this.src = '{% static "/img/portfolio/ghost_icon.png" %}'">
+                                <img src="{{ get_rough_pic_url}}" style="background-color:aliceblue; flex:1 0 49%;max-width: 49%; max-height: 6.5em;object-fit: cover;"onerror="this.src = '{% static "/img/portfolio/ghost_icon.png" %}'">
+                            </div>
+
+                        </a>
+                    </div>
+                        <script>
+                            var firstDay{{ post.pk }} = new Date('{{ post.created_date|date:"Y-m-d h:i:s+09:00" }}'.replace(/-/g, "/")).getTime();
+                            var DLDay{{ post.pk }} = new Date('{{ post.deadline_date|date:"Y-m-d h:i:s+09:00" }}'.replace(/-/g, "/")).getTime();
+                            var x{{ post.pk }} = setInterval(function() {
+                                var now{{ post.pk }} = new Date().getTime();
+                                var distance{{ post.pk }} = now{{ post.pk }} - firstDay{{ post.pk }};                                
+                                var d{{ post.pk }} = Math.floor(distance{{ post.pk }} / (1000 * 60 * 60 * 24)) + 1;
+                                var h{{ post.pk }} = Math.floor((distance{{ post.pk }} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var m{{ post.pk }} = Math.floor((distance{{ post.pk }} % (1000 * 60 * 60)) / (1000 * 60));
+                                var s{{ post.pk }} = Math.floor((distance{{ post.pk }} % (1000 * 60)) / 1000);
+
+                                var Ddistance{{ post.pk }} = DLDay{{ post.pk }} - now{{ post.pk }};
+                                var Dd{{ post.pk }} = Math.floor(Ddistance{{ post.pk }} / (1000 * 60 * 60 * 24));
+                                var Dh{{ post.pk }} = Math.floor((Ddistance{{ post.pk }} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var Dm{{ post.pk }} = Math.floor((Ddistance{{ post.pk }} % (1000 * 60 * 60)) / (1000 * 60));
+                                var Ds{{ post.pk }} = Math.floor((Ddistance{{ post.pk }} % (1000 * 60)) / 1000);
+
+                                if({{ post.working|lower }}){
+                                    if( {{post.deadline|lower }}){
+                                        document.getElementById("dt{{ post.pk }}").innerHTML = [Dd{{ post.pk }} < 10 ? '0'+Dd{{ post.pk }} : Dd{{ post.pk }}];
+                                        document.getElementById("ht{{ post.pk }}").innerHTML = [Dh{{ post.pk }} < 10 ? '0'+Dh{{ post.pk }} : Dh{{ post.pk }}];
+                                        document.getElementById("mt{{ post.pk }}").innerHTML = [Dm{{ post.pk }} < 10 ? '0'+Dm{{ post.pk }} : Dm{{ post.pk }}];
+                                        document.getElementById("st{{ post.pk }}").innerHTML = [Ds{{ post.pk }} < 10 ? '0'+Ds{{ post.pk }} : Ds{{ post.pk }}];
+                                        document.getElementById("DDL{{ post.pk }}").innerText = 'DEADLINE';
+                                    }
+                                    else if({{ post.deadline|lower }}==false){
+                                        document.getElementById("dt{{ post.pk }}").innerHTML = [d{{ post.pk }} < 10 ? '0'+d{{ post.pk }} : d{{ post.pk }}];
+                                        document.getElementById("ht{{ post.pk }}").innerHTML = [h{{ post.pk }} < 10 ? '0'+h{{ post.pk }} : h{{ post.pk }}];
+                                        document.getElementById("mt{{ post.pk }}").innerHTML = [m{{ post.pk }} < 10 ? '0'+m{{ post.pk }} : m{{ post.pk }}];
+                                        document.getElementById("st{{ post.pk }}").innerHTML = [s{{ post.pk }} < 10 ? '0'+s{{ post.pk }} : s{{ post.pk }}];
+                                        document.getElementById("DDL{{ post.pk }}").innerText = 'NO LIMIT';
+                                        document.getElementById("DDL{{ post.pk }}").style.color= '#DFF0E2';
+                                    }
+                                }else{
+                                var y = document.getElementsByClassName('clocktext{{ post.pk }}');
+                                var i;
+                                for (i = 0; i < y.length; i++){
+                                    y[i].style.display = 'none';
+                                }
+                                document.getElementById("done{{ post.pk }}").style.display= '';
+                                document.getElementById("DDL{{ post.pk }}").style.display= 'none';
+                                }
+                            }, 1000);
+
+                        </script>
+                {% endfor %}
+                // <script>
+                //                 var firstDay = new Date('{{ timetracker.todaystart|date:"Y-m-d h:i:s+09:00" }}').getTime();
+                //                 // [d < 10 ? '0' + d : d] +" : " + 
+                //                 var x = setInterval(function() {
+                //                             var now = new Date().getTime();
+                //                             var distance = now - firstDay;
+                //                             var d = Math.floor(distance / (1000 * 60 * 60 * 24)) + 1;
+                //                             var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                //                             var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                //                             var s = Math.floor((distance % (1000 * 60)) / 1000);
+                //                             if({{ timetracker.switch|lower }}){
+                //                             document.getElementById("d-day").innerHTML = [h < 10 ? '0' + h : h] + " : " + [m < 10 ? '0' + m : m] + " : " + [s < 10 ? '0' + s : s];
+                //                             }else{
+                //                             document.getElementById("d-day").innerHTML = "休み中";
+                //                             }
+                //                         }, 1000);
+                //         </script>
+            </div>
+        </div>
+    </section>
