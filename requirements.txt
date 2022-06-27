@@ -1,0 +1,29 @@
+appdirs @ file:///volume1/%40appstore/python3/share/wheelhouse/appdirs-1.4.4-py2.py3-none-any.whl
+bcrypt==3.2.0
+beautifulsoup4==4.10.0
+bs4==0.0.1
+certifi==2021.10.8
+cffi==1.14.6
+charset-normalizer==2.0.11
+cryptography==3.3.2
+distlib @ file:///volume1/%40appstore/python3/share/wheelhouse/distlib-0.3.3-py3-none-any.whl
+fake-useragent==0.1.11
+filelock @ file:///volume1/%40appstore/python3/share/wheelhouse/filelock-3.0.12-py3-none-any.whl
+gallery-dl==1.20.5
+idna @ file:///volume1/%40appstore/python3/share/wheelhouse/idna-3.3-py3-none-any.whl
+importlib-metadata @ file:///volume1/%40appstore/python3/share/wheelhouse/importlib_metadata-4.8.1-py3-none-any.whl
+importlib-resources @ file:///volume1/%40appstore/python3/share/wheelhouse/importlib_resources-5.2.2-py3-none-any.whl
+ipaddress @ file:///volume1/%40appstore/python3/share/wheelhouse/ipaddress-1.0.23-py2.py3-none-any.whl
+olefile @ file:///volume1/%40appstore/python3/share/wheelhouse/olefile-0.46-py2.py3-none-any.whl
+platformdirs @ file:///volume1/%40appstore/python3/share/wheelhouse/platformdirs-2.4.0-py3-none-any.whl
+pyasn1 @ file:///volume1/%40appstore/python3/share/wheelhouse/pyasn1-0.4.8-py2.py3-none-any.whl
+pycparser==2.20
+pyOpenSSL @ file:///volume1/%40appstore/python3/share/wheelhouse/pyOpenSSL-21.0.0-py2.py3-none-any.whl
+requests==2.27.1
+ruamel.yaml @ file:///volume1/%40appstore/python3/share/wheelhouse/ruamel.yaml-0.16.10-py3-none-any.whl
+six @ file:///volume1/%40appstore/python3/share/wheelhouse/six-1.16.0-py2.py3-none-any.whl
+soupsieve==2.3.1
+urllib3==1.26.8
+virtualenv @ file:///volume1/%40appstore/python3/share/wheelhouse/virtualenv-20.4.6-py2.py3-none-any.whl
+youtube-dl==2021.12.17
+zipp @ file:///volume1/%40appstore/python3/share/wheelhouse/zipp-3.6.0-py3-none-any.whl

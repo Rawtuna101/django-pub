@@ -19,6 +19,8 @@ from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import messages
+from django.contrib.auth import views as auth_views
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +28,9 @@ urlpatterns = [
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('', include('blog.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-]
+    path('', include('social_django.urls', namespace='social')),
+    path('logout/', auth_views.LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
+     ]
 
 def protected_file(request, path, document_root=None):
     messages.error(request, "접근 불가")

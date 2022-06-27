@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, TimeTracker, Comment
+from .models import Post, TimeTracker, Comment, Pinterest, RKGK
 
 # Register your models here.
 
@@ -11,8 +11,13 @@ class TimeAdmin(admin.ModelAdmin):
     list_editable = ['todaystart', 'switch']
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'comment_user']
+    list_display = ['id']
+
+class PinterestAdmin(admin.ModelAdmin):
+    list_display = ['id', 'pin_url', 'pin_img']
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(TimeTracker, TimeAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Pinterest, PinterestAdmin)
+admin.site.register(RKGK)

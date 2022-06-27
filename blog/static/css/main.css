@@ -3,58 +3,79 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-body {
-    background-color: #eee
-}
+ @import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
-.card {
-    background-color: #fff;
-    border: none
-}
-
-.form-color {
-    background-color: #fafafa
-}
-
-.form-control {
-    height: 48px;
-    border-radius: 25px
-}
-
-.form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #35b69f;
-    outline: 0;
-    box-shadow: none;
-    text-indent: 10px
-}
-
-.c-badge {
-    background-color: #35b69f;
-    color: white;
-    height: 20px;
-    font-size: 11px;
-    width: 92px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2px
-}
-
-.comment-text {
-    font-size: 13px
-}
-
-.wish {
-    color: #35b69f
-}
-
-.user-feed {
-    font-size: 14px;
-    margin-top: 12px
-}
+ @font-face {
+     font-family: 'classictype';
+     src: url('../../static/Cafe24Classictype.ttf');
+ }
+ .detailBox {
+     width:320px;
+     border:1px solid #bbb;
+     margin:50px;
+ }
+ .titleBox {
+     background-color:#fdfdfd;
+     padding:10px;
+ }
+ .titleBox label{
+   color:#444;
+   margin:0;
+   display:inline-block;
+ }
+ 
+ .commentBox {
+     padding:10px;
+     border-top:1px dotted #bbb;
+ }
+ .commentBox .form-group:first-child, .actionBox .form-group:first-child {
+     width:80%;
+ }
+ .commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+     width:18%;
+ }
+ .actionBox .form-group * {
+     width:100%;
+ }
+ .taskDescription {
+     margin-top:10px 0;
+     font-size: 13px
+ }
+ .commentList {
+     padding:0;
+     list-style:none;
+     max-height:200px;
+     overflow:auto;
+ }
+ .commentList li {
+     margin:0;
+     margin-top:10px;
+ }
+ .commentList li > div {
+     display:table-cell;
+ }
+ .commenterImage {
+     width:30px;
+     margin-right:5px;
+     height:100%;
+     float:left;
+ }
+ .commenterImage img {
+     width:100%;
+     border-radius:50%;
+ }
+ .commentText p {
+     margin:0;
+ }
+ .sub-text {
+     color:#aaa;
+     font-family:verdana;
+     font-size:11px;
+ }
+ .actionBox {
+     border-top:1px dotted #bbb;
+     padding:10px;
+ }
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
 html {
@@ -96,6 +117,20 @@ html {
     border-color: #BCB1FF;
 }
 */
+@media(max-width: 640px) {
+.header-item{
+    display:none;
+}
+
+.header-item-none{
+    display: inline-block;
+    font-size:1.5rem;   
+    padding: 0 5px 0;
+    color: var(--main-background-color); 
+    border-radius: 1rem;
+    background-color: var(--header);
+}
+}
 
 img{
     filter: none;
@@ -206,9 +241,8 @@ hr.star-primary2:after {
 }
 
 hr.star-primary-1 {
-    margin: 25px auto 30px;
+    margin: 20px auto 30px;
     padding: 0;
-    max-width: 250px;
     border: 0;
     border-top: solid 3px;
     text-align: center;
@@ -353,7 +387,7 @@ header .intro-text .skills {
 }
 
 .navbar .navbar-nav {
-    letter-spacing: 1px;
+    letter-spacing: -1px;
 }
 
 .navbar .navbar-nav li a:focus {
@@ -576,7 +610,7 @@ section.success {
   font-family: 'NanumSquare';
   color:var(--custom1);
   font-size: 4vmin;
-  background: #fff;
+  background: var(--main-background-color);
   margin-top: -5px; 
   margin-left: 10px; 
   padding: 0 10px; 
@@ -588,7 +622,14 @@ section.success {
     margin-right: 50px;
     border: 1px solid var(--secondary);
 }
-
+.portfolio-flex-grid .portfolio-flex-row .portfolio-flex-item {
+    flex: 1 0 49%;
+}
+.pinterest{
+    column-width: 16vw;
+    column-gap:0;
+    column-count: 3;
+}
 
 
 @media(max-width:270px) {
@@ -607,6 +648,19 @@ section.success {
 
 /* Flexbox Portfolio Grid */
 @media (min-width: 640px) {
+    .header-item{
+        display: inline-block;
+        font-size:1.2rem;   
+        padding: 0 5px 0;
+        color: var(--main-background-color); 
+        border-radius: 1rem;
+        background-color: var(--header);
+    }
+    
+    .header-item-none{
+        display:none;
+    }
+
     .portfolio-flex-grid .portfolio-flex-row {
       display: flex;
       flex-flow: row wrap;
@@ -633,6 +687,12 @@ section.success {
   }
  /*custom-flex*/
  @media (min-width: 640px) {
+    .pinterest{
+        column-width: 16vw;
+        column-gap:0;
+        column-count: 4;
+    }
+
     .portfolio-flex-grid .portfolio-flex-row1 {
       margin-top: 15px;
       padding-left: 24%;
@@ -685,9 +745,18 @@ section.success {
   }
 
   @media (max-width: 1200px) {
+    
     #fav {
     display: none;
     background-color: black;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .pinterest{
+        column-width: 16vw;
+        column-gap:0;
+        column-count: 5;
     }
   }
 
@@ -697,7 +766,8 @@ section.success {
     color:var(--btn);
     text-decoration:none;
   }
-  @media (min-width: 1380px) {
+  @media (min-width: 1380px) { 
+
     #d-day {
       font-size: 10rem;
     }

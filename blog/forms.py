@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Pinterest
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 class PostPosts(forms.ModelForm):
@@ -23,3 +23,9 @@ class PostPosts(forms.ModelForm):
             ),
             'body': forms.CharField(widget=CKEditorUploadingWidget()),
         }
+
+class PostPins(forms.ModelForm):
+    class Meta:
+        model = Pinterest
+
+        fields = [ 'pin_img', 'pin_url', ]

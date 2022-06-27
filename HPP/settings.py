@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-su)kd$x4sx9*33zgi#@76k#z!mch1f=s4%i==8%u-&h34loc0s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.10.103','127.0.0.1','localhost','14.44.17.80','192.168.10.101','www.rawtuna101.art',]
+ALLOWED_HOSTS = ['192.168.1.108','127.0.0.1','localhost','14.44.17.62','192.168.1.101','www.rawtuna101.art',]
 
 
 # Application definition
@@ -43,7 +43,23 @@ INSTALLED_APPS = [
     'blog',
     'ckeditor',
     'ckeditor_uploader',    
+    'social_django',
 ]
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '710367379525-va6e3faln93rl7hruf5ausu6bdc0elhs.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'osS4-upXEwyi3KdOs892IP7i'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 

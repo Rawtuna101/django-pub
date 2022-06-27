@@ -1,8 +1,7 @@
 {% load static %}
  <!-- jQuery Version 1.11.0 -->
  <script src="{% static "/js/jquery-1.11.0.js" %}"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+ 
  <!-- Bootstrap Core JavaScript -->
  <script src="{% static "/js/bootstrap.min.js" %}"></script>
 
@@ -13,23 +12,13 @@
 
  <!-- Contact Form JavaScript -->
  <script src="{% static "/js/jqBootstrapValidation.js" %}"></script>
- {% if site.contact == "static" %}
  <script src="{% static "/js/contact_me_static.js" %}"></script>
- {% else %}
-  <script src="{% static "/js/contact_me.js" %}"></script>
- {% endif %}
+ 
 
  <!-- Custom Theme JavaScript -->
  <script src="{% static "/js/freelancer.js" %}"></script>
- <script>
- $(document).ready(function() {
-
-   if(window.location.href.indexOf('#portfolioModal-{{ post.pk }}') != -1) {
-     $('#portfolioModal-{{ post.pk }}').modal('show');
-   }
  
- });
-</script>
+
 
  {% if site.contact == "disqus" %}
  <!-- Disqus Stuff -->

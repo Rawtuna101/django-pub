@@ -38,64 +38,79 @@
                                         </strong>
                                     </li>
                                 {% endif %}
-                            </ul>
-                            <div class=""> 
-                                {% for comment in post.comment_set.all %}
-                                <div class="container mt-5 mb-5">
-                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-md-6">
-                                            <div class="comment-section">
-                                                <div class="card p-3 border-blue"> <span class="dots"></span>
-                                                    <div class="d-flex justify-content-between mt-2">
-                                                        <div class="d-flex flex-row">
-                                                            <div class="user-image"> <img src="https://i.imgur.com/rvQ3LAt.jpg" width="40" class="rounded-circle"> </div>
-                                                            <div class="d-flex flex-column">
-                                                                <h6 class="mb-0">Martin Tyler</h6> <span class="date">Nov 29, 2020 at 9:40</span>
-                                                            </div>
-                                                        </div>
-                                                        <div> <span>Resolve</span> </div>
-                                                    </div>
-                                                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies, odio in interdum tristique, erat arcu vestibulum leo, non condimentum eros risus quis tellus.</p>
+                            </ul>                                                        
+                                <div class="detailBox" style="max-width: 100%; margin: 0 auto;text-align:start;">
+                                    <div class="titleBox">
+                                      <label>Comment Box</label>
+                                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="commentBox">
+                                        
+                                        <p class="taskDescription">Language!</p>
+                                    </div>
+                                    <div class="actionBox">
+                                        <ul class="commentList commentList{{ post.pk }}">
+                                            {% for comment in post.comment_set.all %}
+                                            <li>
+                                                <span>{{ comment.comment_user }}</span>
+                                                <div class="commenterImage">
+                                                  <img src="{% static "/img/speech-bubble.png" %}" />
                                                 </div>
-                                                <div class="card p-3 border-blue mt-3"> <span class="dots"></span>
-                                                    <div class="d-flex justify-content-between mt-2">
-                                                        <div class="d-flex flex-row">
-                                                            <div class="user-image"> <img src="https://i.imgur.com/rvQ3LAt.jpg" width="40" class="rounded-circle"> </div>
-                                                            <div class="d-flex flex-column">
-                                                                <h6 class="mb-0">Laura Nikos</h6> <span class="date">Nov 30, 2020 at 10:40</span>
-                                                            </div>
-                                                        </div>
-                                                        <div> <span>Pending</span> </div>
-                                                    </div>
-                                                    <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies, odio in interdum tristique, erat arcu vestibulum leo, non condimentum eros risus quis tellus.</p>
-                                                    <div class="form"> <input class="form-control" placeholder="Write a comment...">
-                                                        <div class="mt-2 d-flex justify-content-end"> <button class="btn btn-outline-secondary btn-sm">Cancel</button> <button class="btn btn-primary btn-sm ms-1">Suggest changes</button> </div>
-                                                    </div>
+                                                <div class="commentText">
+                                                    <p class="taskDescription">{{ comment.comment_textfield }}</p> <span class="date sub-text">{{ comment.comment_date }}</span>
+                                
                                                 </div>
+                                            </li>                                            
+                                            {% endfor %} 
+                                        </ul>
+                                        {% if user.is_authenticated %}
+                                        <form class="form-inline" role="form">
+                                            <div class="form-group">
+                                                <input class="form-control replyContent{{ post.pk }}" type="text" placeholder="Your comments" />
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <!-- Single Comment -->
-                                    <div class="media mb-4">
-                                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                                        <div class="media-body">
-                                            <h5 class="mt-0">{{ comment.comment_user }}</h5>
-                                            <h5 class="mt-0">{{ comment.comment_date }}</h5>
-                                            <h5 class="mt-0">{{ comment.comment_thumbnail_url }}</h5>
-                                            <h5 class="mt-0">{{ comment.comment_textfield }}</h5>
-                                        </div>
-                                    </div>
-                                    
-                                {% endfor %}                               
-                              <script src="https://utteranc.es/client.js"
-                                      repo="Rawtuna101/Homepage-sample"
-                                      issue-term="{{ post.pk }}"
-                                      theme="boxy-light"
-                                      crossorigin="anonymous"
-                                      async>
-                              </script>
-                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-default btnReply{{ post.pk }}">Add</button>
+                                            </div>
+                                        </form>
+                                        {% else %}
+                                        
+                                        {% endif %}  
+                                        <script>
+                                            let btnReply{{ post.pk }} = document.querySelector('.btnReply{{ post.pk }}')
+                                            btnReply{{ post.pk }}.addEventListener('click', e => {
+                                        
+                                                let content{{ post.pk }} = document.querySelector('.replyContent{{ post.pk }}').value;
+                                        
+                                                let param{{ post.pk }} = {
+                                                    'memberId' : '{{ user.id }}',
+                                                    'postPk' : '{{ post.pk }}',
+                                                    'content' : content{{ post.pk }},
+                                                }
+                                            
+                                                $.ajax({
+                                                    url : '{% url "comment" %}',
+                                                    type : 'POST',
+                                                    headers: {
+                                                        'X-CSRFTOKEN' : '{{ csrf_token }}'
+                                                    },
+                                                    data : JSON.stringify(param{{ post.pk }}),
+                                                    success: function(data){
+                                                        console.log(data);
+                                                        let commentUl = document.querySelector('.commentList{{ post.pk }}');
+                                                        let NewLi = document.createElement('li');
+                                                        let str = '<span>' + data.name + '</span> <div class="commenterImage"><img src="{% static "/img/speech-bubble.png" %}"/></div><div class="commentText"><p class="taskDescription">' + data.content +'</p><span class="date sub-text">'+data.date+'</span></div>';
+                                                        NewLi.innerHTML = str;
+                                                        commentUl.append(NewLi);
+                                                    },
+                                                    error: function(request,status,error){
+                                                        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+                                                },
+                                                })
+                                            })
+                                            
+                                        </script>                                                                              
+                                    </div>                                    
+                                </div>                             
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
